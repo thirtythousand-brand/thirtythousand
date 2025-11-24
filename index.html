@@ -11,23 +11,48 @@
     <link rel="stylesheet" href="reset-css.css">
     <link rel="stylesheet" href="styles.css">
     <script>
-        const vids = document.querySelectorAll('#video-rotator video');
-        let i = 0;
+        document.addEventListener('DOMContentLoaded', function () {
+            const vids = document.querySelectorAll('#video-rotator video');
+            if (!vids.length) return;
 
-        // Start the first video
-        vids[i].classList.add('active');
-        vids[i].play();
+            // Make sure all are muted & inline so autoplay isn't blocked
+            vids.forEach(v => {
+            v.muted = true;
+            v.playsInline = true;
+            v.loop = true;          // each video loops while it's "on stage"
+            v.currentTime = 0;
+            v.pause();
+            });
 
-        setInterval(() => {
-            vids[i].classList.remove('active');
-            vids[i].pause();
-            vids[i].currentTime = 0;
+            let i = 0;
+            const SHOW_TIME = 8000;   // ms each video is shown
 
+            function showVideo(index) {
+            // hide all
+            vids.forEach(v => v.classList.remove('active'));
+
+            const v = vids[index];
+            v.classList.add('active');
+
+            // restart & play
+            v.currentTime = 0;
+            const p = v.play();
+            if (p && typeof p.then === 'function') {
+                p.catch(() => {
+                // autoplay got grumpy; nothing we can really do silently
+                });
+            }
+            }
+
+            // show first video
+            showVideo(i);
+
+            // rotate
+            setInterval(() => {
             i = (i + 1) % vids.length;
-
-            vids[i].classList.add('active');
-            vids[i].play();
-        }, 3000); // 3 seconds per video, adjust as needed
+            showVideo(i);
+            }, SHOW_TIME);
+        });
     </script>
 </head>
 <body>
@@ -51,13 +76,15 @@
 
     <!-- HERO (Point 1) -->
     <section id="section1" class="hero-section">
-        <h1>You don't have time.</h1>
-        <p>This is for the businessperson who means business today not yesterday.</p>
-        <p>Airport to elevator, boardroom to bedroom, hotel to home, members club to nightclub.</p>
-        <p>These are the clothes that turn you into the person you want to be.</p>
-        <p>Uncompromising, all-natural fabrics designed for purpose, delivering subtlety and confidence.</p>
-        <p><a href="#contact" class="cta">Join the waitlist</a></p>
-        <div id="video-rotator">
+        <div class="introduction">
+            <h1>You don't have time.</h1>
+            <p>This is for the businessperson who means business today not yesterday.</p>
+            <p>Airport to elevator, boardroom to bedroom, hotel to home, members club to nightclub.</p>
+            <p>These are the clothes that turn you into the person you want to be.</p>
+            <p>Uncompromising, all-natural fabrics designed for purpose, delivering subtlety and confidence.</p>
+            <p><a href="#contact" class="cta">Join the waitlist</a></p>
+        </div>
+        <div class="video-content" id="video-rotator">
             <video src="video_1.mp4" muted autoplay playsinline></video>
             <video src="video_2.mp4" muted playsinline></video>
             <video src="video_3.mp4" muted playsinline></video>
