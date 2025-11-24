@@ -2,10 +2,9 @@
 
 html { scroll-behavior: smooth; }
 body {
-    font-family: 'Fira Sans', sans-serif;
+    font-family: 'helvetica-neue', Helvetica, sans-serif;
     background-color: black;
     color: white;
-    font-weight: 300;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -18,6 +17,7 @@ h1 {
     font-size: 4rem;
     font-weight: 100;
     max-width: 30rem;
+    margin-bottom: 2rem;
 }
 h2 { 
     font-weight: 400; 
@@ -63,13 +63,12 @@ i { margin-right: 1rem; }
 /* LAYOUT */
 
 section { 
-    padding: 3rem; 
+    padding: 4rem; 
     padding-bottom: 5rem;
-    min-height: calc(100vh - 20rem);
-    /* min-height: 600px; */
+    min-height: calc(100vh - 30rem);
 }
-section > p { padding: 2rem 0rem;}
-section > * { margin: 1rem; }
+section > p { padding: 0.5rem 0rem;}
+/* section > * { margin: 1rem; } */
 section > div { margin: 0; }
 .content-row { 
     display: flex; 
@@ -78,7 +77,7 @@ section > div { margin: 0; }
 }
 .content-row > div { 
     flex: 1; 
-    padding: 1rem;
+    padding-right: 1rem;
 }
 .small-mobile { display: none;}
 
@@ -94,9 +93,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
 /* CONTENT */
 
 .hero-section {
-    /* background-size: cover;
-    background-position: left;
-    background-image: url(pexels-alexander-isreb-1797418.jpg); */
     background-color: black;
     color: white;
     display: flex;
@@ -111,9 +107,7 @@ img.tt-logo, .home-anchor { height: 3rem; }
 }
 .typographics.big-screens { display: flex; }
 .typographics.small-mobile { display: none; }
-.hero-section p {
-    max-width: 30rem;
-}
+
 .hero-section button { 
     max-width: 600px;
     font-weight: 400;
@@ -174,7 +168,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
 .darkcyan { background-color: #082629;}
 .hotpink { background-color: hotpink;}
 .navy { background-color: navy;}
-.lighter-grey { background-color: #dedede;}
 
 .darkcyan button { 
     background-color: rgba(255,255,255,0.1);
@@ -192,18 +185,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
 
 
 /* IMAGES */
-
-.greg-skinner, .fernando-berroeta, .togi-enkhbat, .nathan-stickney {
-    height: 100px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-position: left;
-}
-.greg-skinner { background-image: url(Greg.png); }
-.nathan-stickney { background-image: url(Nate.png); }
-.togi-enkhbat { background-image: url(Togi.png); }
-.fernando-berroeta { background-image: url(Nano.png); }
 
 /* OFF ON LARGER DISPLAYS */
 
@@ -265,6 +246,29 @@ img.tt-logo, .home-anchor { height: 3rem; }
     margin: 0.2rem;
 }
 
+/* ID TAGS */
+
+#video-rotator {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* whatever your layout needs */
+    aspect-ratio: 16/9; /* strongly advised */
+    overflow: hidden;
+}
+
+#video-rotator video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    /* opacity: 0; */
+    transition: opacity 0.8s ease;
+}
+
+#video-rotator video.active {
+    opacity: 1;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 1440px) {
@@ -273,7 +277,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
     h2, h3 { font-size: 1.5rem; }
     .sticky-menu { padding: 0 1rem;}
     .hero-section { 
-        background-image: url(pexels-gdtography-950241.jpg);
         background-size: cover;
         background-position: center;
     }
@@ -295,7 +298,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
         position: absolute;
         top: 3rem;
         left: 0;
-        background-color: #082629;
         flex-direction: column;
     }
     .sticky-menu { padding: 0 1rem; }
@@ -311,7 +313,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
         margin-bottom: 0;
         text-decoration: none;
     }
-    .impact-content .content-row { border-bottom: 2px solid white; }
     .impact-content .typographics { margin-bottom: 2rem; }
     .typographics.small-mobile { display: flex; } 
     .typographics.big-screens { display: none; }
