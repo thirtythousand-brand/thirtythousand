@@ -1,5 +1,14 @@
+/* ROOT */
+:root { --tile-gap: 1rem;}
+
 /* ELEMENTS */
 
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
 html { scroll-behavior: smooth; }
 body {
     font-family: 'helvetica-neue', Helvetica, sans-serif;
@@ -9,6 +18,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
 }
+div { border-radius: 2rem;}
 h2, h3 { 
     font-size: 1.75rem; 
     margin-bottom: 2rem;
@@ -56,8 +66,10 @@ button:hover, .darkcyan button:hover {
     cursor: pointer;
 }
 button p { margin-bottom: 0;}
-
-i { margin-right: 1rem; }
+i { 
+    margin-right: 1rem; 
+    min-width: 1rem;
+}
 
 /* LAYOUT */
 
@@ -69,16 +81,23 @@ section {
 section > p { padding: 0.5rem 0rem;}
 /* section > * { margin: 1rem; } */
 section > div { margin: 0; }
-.content-row { 
+/* .content-row { 
     display: flex; 
     flex-wrap: wrap;
     padding: 0;
     gap: 1rem;
+} */
+ .content-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--tile-gap);
 }
 .content-row > div { 
-    flex: 1; 
+    flex: 0 0 100%;
+    min-width: 0;              /* stops the phantom overflow */
+    /* flex: 1; 
     display: flex;
-    min-width: 20rem;
+    min-width: calc(33.333% - 1rem); */
 }
 .small-mobile { display: none;}
 
@@ -98,11 +117,12 @@ img.tt-logo, .home-anchor { height: 3rem; }
     color: white;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .introduction { 
     flex: 1; 
-    min-width: 400px;
+    /* min-width: 400px; */
 }
 
 .hero-section button { 
@@ -152,10 +172,9 @@ img.tt-logo, .home-anchor { height: 3rem; }
 /* IMAGES */
 .image-tile {
     aspect-ratio: 1 / 1;
-    flex: 1;
-    min-width: 250px;
-    max-width: 500px;
-    /* padding-bottom: 1rem; */
+    /* flex: 1 1 calc(33.333% - 1rem); */
+    /* max-width: calc(33.333% - 1rem); */
+    overflow: hidden;
 }
 
 /* make images fill the square nicely */
@@ -165,16 +184,6 @@ img.tt-logo, .home-anchor { height: 3rem; }
     object-fit: cover;
     display: block;
 }
-
-/* FOOTER */
-.contact, .footer { min-height: 1px; }
-.footer {
-    border-top: 0.2rem solid white;
-    display: flex;
-    padding: 4rem;
-}
-.footer div { flex: 1; }
-.copyright { width: 100%; }
 
 /* Exceptions */
 .hero-tee {
@@ -245,8 +254,8 @@ img.tt-logo, .home-anchor { height: 3rem; }
     position: relative;
     flex: 2;
     width: 100%;
-    min-width: 400px;
-    aspect-ratio: 16/9; /* strongly advised */
+    min-width: 250px;
+    aspect-ratio: 21/9; /* strongly advised */
     overflow: hidden;
 }
 
@@ -255,8 +264,8 @@ img.tt-logo, .home-anchor { height: 3rem; }
     top: 0; 
     left: 0;
     width: 100%; 
-    /* height: 100%; */
     object-fit: cover;
+    object-position: 50% 10%;
     opacity: 0;
     transition: opacity 0.8s ease;
 }
@@ -275,9 +284,36 @@ iframe {
 }
 
 /* MEDIA QUERIES */
+/* ≥ 640px → 2 tiles */
+@media screen and (min-width: 640px) {
+    .content-row > div {
+        flex: 0 0 calc((100% - var(--tile-gap)) / 2);
+    }
+}
+
+/* ≥ 768px → 3 tiles */
+@media screen and (min-width: 768px) {
+    .content-row > div {
+        flex: 0 0 calc((100% - (2 * var(--tile-gap))) / 3);
+    }
+}
+
+/* ≥ 1440px → 4 tiles */
+@media screen and (min-width: 1440px) {
+    .content-row > div {
+        flex: 0 0 calc((100% - (3 * var(--tile-gap))) / 4);
+    }
+}
+
+/* ≥ 1920px → 5 tiles */
+@media screen and (min-width: 1920px) {
+    .content-row > div {
+        flex: 0 0 calc((100% - (4 * var(--tile-gap))) / 5);
+    }
+}
 
 @media screen and (max-width: 1440px) {
-    section { padding: 0 0 5rem 0; }
+    section { padding: 0 1rem; }
     body { font-size: 1rem; }
     h2, h3 { font-size: 1.5rem; }
     .sticky-menu { padding: 0 1rem;}
@@ -288,10 +324,23 @@ iframe {
     .people div {min-width: 300px;}
 }
 
+/* @media screen and (max-width: 1220px) {
 
-@media screen and (max-width: 980px) {
+} */
+
+@media screen and (max-width: 1220px) {
     #video-rotator {
-    flex: 1;        
+        aspect-ratio: 1/1;
+    }   
+    #video-rotator video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;           /* fill the container, don't keep own ratio */
+        object-fit: cover;      /* crop to fill */
+        object-position: 50% 10%; /* tweak vertical framing */
+        display: block;
     }   
 }
 
