@@ -44,7 +44,6 @@ button {
     border-radius: 1rem;
     display: inline-block;
     font-size: 1rem;
-    font-family: 'Fira Sans', sans-serif;
     margin-top: 1rem;
     max-width: 250px;
     padding: 1rem 1.5rem;
@@ -74,10 +73,12 @@ section > div { margin: 0; }
     display: flex; 
     flex-wrap: wrap;
     padding: 0;
+    gap: 1rem;
 }
 .content-row > div { 
     flex: 1; 
-    padding-right: 1rem;
+    display: flex;
+    min-width: 20rem;
 }
 .small-mobile { display: none;}
 
@@ -148,6 +149,23 @@ img.tt-logo, .home-anchor { height: 3rem; }
 .people i { margin: 0; }
 .button-title { font-weight: 300; }
 
+/* IMAGES */
+.image-tile {
+    aspect-ratio: 1 / 1;
+    flex: 1;
+    min-width: 250px;
+    max-width: 500px;
+    /* padding-bottom: 1rem; */
+}
+
+/* make images fill the square nicely */
+.image-tile img, .image-tile video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
 /* FOOTER */
 .contact, .footer { min-height: 1px; }
 .footer {
@@ -158,45 +176,17 @@ img.tt-logo, .home-anchor { height: 3rem; }
 .footer div { flex: 1; }
 .copyright { width: 100%; }
 
-/* COLOURS */
-
-.darkcyan, .hotpink, .navy { color: white;}
-.darkcyan { background-color: #082629;}
-.hotpink { background-color: hotpink;}
-.navy { background-color: navy;}
-
-.darkcyan button { 
-    background-color: rgba(255,255,255,0.1);
-    color: white;
+/* Exceptions */
+.hero-tee {
+    aspect-ratio: unset;
 }
-
-
-/* IMAGES */
-.image-tile {
-    aspect-ratio: 1 / 1;            /* forces square */
-    flex: 1;
-    min-width: 250px;
-    max-width: 250px;
-    padding-bottom: 1rem;
-}
-
-/* make images fill the square nicely */
-.image-tile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.content-row .text-content {
     display: block;
 }
-
 
 /* OFF ON LARGER DISPLAYS */
 
 .mobile-only { display: none; }
-
-/* COLORS */
-/* racing green #004225; */
-/* dark cyan: #082629; */
-
 
 /* MENU */
 /* Sticky Menu Styles */
@@ -273,6 +263,15 @@ img.tt-logo, .home-anchor { height: 3rem; }
 
 #video-rotator video.active {
     opacity: 1;
+}
+
+/* IFRAME */
+
+/* Force the iframe to take up the full width of its container */
+iframe {
+    min-width: 400px;
+    width: 100%;
+    height: 1500px; 
 }
 
 /* MEDIA QUERIES */
