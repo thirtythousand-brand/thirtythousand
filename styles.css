@@ -54,7 +54,7 @@ button {
     border-radius: 1rem;
     display: inline-block;
     font-size: 1rem;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     max-width: 250px;
     padding: 1rem 1.5rem;
     text-align: left;
@@ -189,8 +189,10 @@ img.tt-logo, .home-anchor { height: 3rem; }
 .hero-tee {
     aspect-ratio: unset;
 }
-.content-row .text-content {
-    display: block;
+.text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* OFF ON LARGER DISPLAYS */
