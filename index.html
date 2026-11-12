@@ -1,210 +1,337 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Thirty Thousand — Effortless, time-saving style</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Premium wardrobe essentials. Quiet, intentional, and built to save time." />
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="reset-css.css">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a27f005bba.js" crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const vids = document.querySelectorAll('#video-rotator video');
-            if (!vids.length) return;
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thirty Thousand — Quiet, natural-fibre wardrobe essentials</title>
+  <meta name="description" content="Quiet, logo-free wardrobe essentials in all-natural fabrics for people who live between airports and boardrooms. Designed in Hong Kong. Join the Hero Tee list.">
+  <meta name="theme-color" content="#0e0e0d">
+  <link rel="canonical" href="https://thirtythousand.co/">
+  <link rel="alternate" hreflang="en" href="https://thirtythousand.co/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://thirtythousand.co/index-zh.html">
+  <link rel="alternate" hreflang="x-default" href="https://thirtythousand.co/">
 
-            // Make sure all are muted & inline so autoplay isn't blocked
-            vids.forEach(v => {
-            v.muted = true;
-            v.playsInline = true;
-            v.loop = true;          // each video loops while it's "on stage"
-            v.currentTime = 0;
-            v.pause();
-            });
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thirty Thousand">
+  <meta property="og:title" content="Thirty Thousand — You don't have time">
+  <meta property="og:description" content="Quiet, logo-free wardrobe essentials in all-natural fabrics, built for the way you actually live. The Hero Tee — limited drops.">
+  <meta property="og:url" content="https://thirtythousand.co/">
+  <meta property="og:image" content="https://thirtythousand.co/assets/images/og-share.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Black-and-white portrait of a man in a white Thirty Thousand tee among paper lanterns">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thirty Thousand — You don't have time">
+  <meta name="twitter:description" content="Quiet, logo-free wardrobe essentials in all-natural fabrics. Limited drops.">
+  <meta name="twitter:image" content="https://thirtythousand.co/assets/images/og-share.jpg">
 
-            let i = 0;
-            const SHOW_TIME = 8000;   // ms each video is shown
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/images/tee-lanterns.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 
-            function showVideo(index) {
-            // hide all
-            vids.forEach(v => v.classList.remove('active'));
-
-            const v = vids[index];
-            v.classList.add('active');
-
-            // restart & play
-            v.currentTime = 0;
-            const p = v.play();
-            if (p && typeof p.then === 'function') {
-                p.catch(() => {
-                // autoplay got grumpy; nothing we can really do silently
-                });
-            }
-            }
-
-            // show first video
-            showVideo(i);
-
-            // rotate
-            setInterval(() => {
-            i = (i + 1) % vids.length;
-            showVideo(i);
-            }, SHOW_TIME);
-        });
-    </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://thirtythousand.co/#organization",
+        "name": "Thirty Thousand",
+        "legalName": "Thirty Thousand Limited",
+        "url": "https://thirtythousand.co/",
+        "logo": "https://thirtythousand.co/favicon.png",
+        "email": "hello@thirtythousand.co",
+        "slogan": "You don't have time.",
+        "description": "A Hong Kong–designed label of quiet, logo-free wardrobe essentials in all-natural fabrics.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Hong Kong", "addressCountry": "HK" },
+        "sameAs": ["https://www.instagram.com/thirty_thousand_official/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://thirtythousand.co/#website",
+        "url": "https://thirtythousand.co/",
+        "name": "Thirty Thousand",
+        "inLanguage": ["en", "zh-Hans"],
+        "publisher": { "@id": "https://thirtythousand.co/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://thirtythousand.co/#webpage",
+        "url": "https://thirtythousand.co/",
+        "name": "Thirty Thousand — Quiet, natural-fibre wardrobe essentials",
+        "isPartOf": { "@id": "https://thirtythousand.co/#website" },
+        "about": { "@id": "https://thirtythousand.co/#organization" },
+        "primaryImageOfPage": "https://thirtythousand.co/assets/images/og-share.jpg",
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-    <section class="sticky-menu" id="section0">
-        <div class="home-anchor">
-            <a href="#section0">
-                <img id="home-image" class="tt-logo" src="Thirty Thousand Logo For Export.png" alt="Thirty Thousand mark"/>
-            </a>
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-ig" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-2.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Thirty Thousand — back to top">
+        <img src="assets/images/logo-white.png" alt="Thirty Thousand" width="144" height="36">
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="#hero-tee">The Hero Tee</a>
+        <a href="#concept">Concept</a>
+        <a href="#principles">Principles</a>
+        <a href="investors.html">Investors</a>
+        <a href="index-zh.html" hreflang="zh-Hans" lang="zh-Hans">中文</a>
+        <a class="nav-ig" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a>
+        <a class="nav-cta" href="EOIform.html">Expression of interest</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__media" data-parallax-bg="0.3">
+        <video autoplay muted loop playsinline preload="metadata" data-autoplay poster="assets/images/tee-lanterns.jpg" aria-hidden="true">
+          <source src="video_1.MP4" type="video/mp4">
+        </video>
+      </div>
+      <div class="wrap">
+        <h1 id="hero-title" data-reveal>You don't have time</h1>
+        <p class="lede" data-reveal style="--d:.15s">This is for the businessman who means business today, not yesterday.</p>
+        <div class="btn-row" data-reveal style="--d:.3s">
+          <a class="btn btn--light" href="EOIform.html">Expression of interest</a>
         </div>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
-            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-        </div>
-        <ul class="nav-list">
-            <li><a href="#section1">home</a></li>
-            <li><a href="investors.html">investors</a></li>
-            <li><a href="index-zh.html">中文</a></li>
-            <li><a href="EOIform.html">E.O.I.</a></li>
-            <li><a href="#contact">contact</a></li>
-            <!-- Add more sections as needed -->
-        </ul>
+      </div>
+      <a class="scroll-cue" href="#brief">Scroll</a>
     </section>
 
-    <!-- HERO (Point 1) -->
-    <section class="hero-section">
-        <div class="introduction text-content">
-            <div>
-                <h1>You don't have time</h1>
-                <p>This is for the businessman who means business today not yesterday.</p>
-                <p>Airport to elevator, boardroom to bedroom, hotel to home, members club to nightclub.</p>
-                <p>These are the clothes that turn you into the person you want to be.</p>
-                <p>Uncompromising, all-natural fabrics designed for purpose, delivering subtlety and confidence.</p>
-            </div>
-            <div>
-                <a href="EOIform.html" target="_blank" rel="noopener noreferrer">
-                    <button>
-                        <span>Expression of interest</span>
-                    </button>
-                </a>
-            </div>
+    <!-- ============ THE BRIEF ============ -->
+    <section class="section on-paper" id="brief" aria-label="The brief">
+      <div class="wrap g">
+        <div style="--col:1 / span 3">
+          <span class="eyebrow" data-reveal>Thirty Thousand</span>
         </div>
-        <div id="video-rotator">
-            <video src="video_1.MP4" muted autoplay playsinline></video>
-            <video src="video_2.MP4" muted playsinline></video>
-            <video src="video_3.MP4" muted playsinline></video>
+        <div style="--col:4 / span 9">
+          <p class="statement statement--wide" data-reveal>Airport to elevator, boardroom to bedroom, hotel to home, members club to nightclub.</p>
         </div>
+        <div class="prose" style="--col:4 / span 5; --mt:clamp(2rem,6vw,6rem)" data-reveal>
+          <p>These are the clothes that turn you into the person you want to be.</p>
+          <p>Uncompromising, all-natural fabrics designed for purpose, delivering subtlety and confidence.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- ABOUT / MANIFESTO (Point 2) -->
-    <section>
-        <h2>The hero tee</h2>
-        <div class="content-row">
-            <div class="text-content">
-                <div>
-                    <p>You run your world, not someone else’s. This tee fits you.</p>
-                    <p>You work out but don't need to steal the scene; the cotton feels good on your skin and even better when someone takes it off.</p>
-                    <p>The fabric goes all day, just like you do, sharp when you're focused, handling heat, humidity, late nights, and long flights without losing its edge.</p>
-                    <p>Clean lines, no noise, no logos. A silhouette that works with your tailoring or on its own.</p>
-                    <p>This is quiet, because you don't need loud.</p>
-                </div>
-                <a href="EOIform.html" target="_blank" rel="noopener noreferrer">
-                    <button>
-                        <span>PREORDER</span>
-                    </button>
-                </a>
-            </div>
-            <div class="image-tile hero-tee"><img src="IMG_1521.jpg" alt=""></div>
-            <div class="image-tile hero-tee"><img src="IMG_1518.jpg" alt=""></div>
-            <div class="image-tile hero-tee"><img src="IMG_1476.jpg" alt=""></div>
-            <div class="image-tile hero-tee"><img src="2BEC40D9-C0FD-478A-B014-C79F521BE001.jpg" alt=""></div>
-            <div class="image-tile hero-tee"><img src="IMG_1458.jpg" alt=""></div>
+    <!-- ============ THE HERO TEE ============ -->
+    <section class="section on-paper" id="hero-tee" style="padding-top:0" aria-labelledby="tee-title">
+      <div class="wrap g">
+        <div style="--col:1 / span 5; --row:1; align-self:end">
+          <span class="eyebrow" data-reveal>The hero tee</span>
+          <h2 id="tee-title" data-reveal>You run your world, not someone else’s.</h2>
+          <div class="prose" style="margin-top:2.5rem" data-reveal>
+            <p>This tee fits you.</p>
+            <p>You work out but don't need to steal the scene; the cotton feels good on your skin and even better when someone takes it off.</p>
+            <p>The fabric goes all day, just like you do, sharp when you're focused, handling heat, humidity, late nights, and long flights without losing its edge.</p>
+            <p>Clean lines, no noise, no logos. A silhouette that works with your tailoring or on its own.</p>
+          </div>
+          <dl class="spec-list" data-reveal>
+            <div><dt>Fabric</dt><dd>220gsm organic cotton</dd></div>
+            <div><dt>Cut</dt><dd>Longer back hem, side vent</dd></div>
+            <div><dt>Run</dt><dd>Limited drops, capped at 300 units per colour</dd></div>
+          </dl>
+          <div class="btn-row" data-reveal>
+            <a class="btn btn--dark" href="EOIform.html">Preorder</a>
+          </div>
         </div>
+
+        <figure style="--col:7 / span 6; --row:1" data-reveal>
+          <div class="frame ar-34" data-parallax-img>
+            <img src="assets/images/tee-street.jpg" width="1241" height="1800" loading="lazy" alt="Black-and-white photograph of a man in sunglasses wearing the white Thirty Thousand Hero Tee on a city street">
+          </div>
+        </figure>
+
+        <figure style="--col:1 / span 4; --row:2" data-reveal>
+          <div class="frame ar-34" data-parallax-img>
+            <img src="assets/images/tee-collar.jpg" width="1200" height="1600" loading="lazy" alt="Close-up of the crew neck and shoulder of the Hero Tee in white cotton">
+          </div>
+        </figure>
+        <figure style="--col:5 / span 4; --row:2; --mt:clamp(0rem,9vw,9rem)" data-parallax="0.05" data-reveal>
+          <div class="frame ar-11" data-parallax-img>
+            <img src="assets/images/tee-back.jpg" width="1800" height="1652" loading="lazy" alt="The Hero Tee seen from behind, showing the shoulder and drape of the fabric">
+          </div>
+        </figure>
+        <figure style="--col:9 / span 4; --row:2; --mt:clamp(0rem,3vw,3rem)" data-reveal>
+          <div class="frame ar-34" data-parallax-img>
+            <img src="assets/images/tee-profile.jpg" width="1334" height="1800" loading="lazy" alt="Side profile of a man in the Hero Tee, hand raised to his face">
+          </div>
+        </figure>
+      </div>
     </section>
 
-
-    <section>
-        <h2>Concept</h2>
-        <div class="content-row">
-            <div class="image-tile"><img src="img1.JPG" alt=""></div>
-            <div class="image-tile"><video src="pan-up-1.MP4" autoplay muted loop playsinline alt=""></div>
-                <!-- <div class="image-tile"><img src="img2.jpg" alt=""></div> -->
-                <div class="image-tile"><img src="img3.jpg" alt=""></div>
-                <div class="image-tile"><video src="pan-up-2.MP4" autoplay muted loop playsinline alt=""></div>
-                <div class="image-tile"><img src="img4.JPG" alt=""></div>
-                <div class="image-tile"><img src="img5.jpg" alt=""></div>
-                <div class="image-tile"><img src="img6.jpg" alt=""></div>
-                <!-- <div class="image-tile"><img src="img7.jpg" alt=""></div> -->
-                <div class="image-tile"><img src="img8.jpg" alt=""></div>
-                <div class="image-tile"><img src="img9.jpg" alt=""></div>
-                <div class="image-tile"><video src="pan-up-3.MP4" autoplay muted loop playsinline alt=""></div>
-            <div class="image-tile"><img src="img10.jpg" alt=""></div>
-            <!-- <div class="image-tile"><img src="img11.JPG" alt=""></div> -->
-        </div>
+    <!-- ============ QUOTE BAND ============ -->
+    <section class="band" aria-label="Brand quote">
+      <div class="band__media" data-parallax-bg="0.28">
+        <img src="assets/images/tee-lanterns-wide.jpg" width="1390" height="1800" loading="lazy" alt="Man in a white tee standing in front of red paper lanterns, black and white">
+      </div>
+      <div class="wrap">
+        <p class="quote" data-reveal>This is quiet, because you don't need loud.</p>
+      </div>
     </section>
 
-    <section>
-        <h2>Principles</h2>
-        <div class="content-row">
-            <div class="content-text">
-                <h3>Fabrics that you can feel</h3>
-                <div>
-                    <p>Our fabric choices are all-natural, chosen for their task. Our designs are as much engineering as they are creative flair.</p>
-                    <p>We know the sourcing of all our fabrics, we check the factories and mills for attention to detail and labour conditions - it all reflects in the garments you wear.</p>
-                </div>
-            </div>
-            <div class="content-text">
-                <h3>Design that works with you</h3>
-                <div>
-                    <p>When you're taking that call on the move, getting in and out of a car, when you're heading into the board room, you don't have time to think about the cut of your pants or whether your collar is folded properly. We get that, because we've done what you do.</p>
-                    <p>Ruthless attention to detail rooted in experiencing the life you lead.</p>
-                </div>
-            </div>
-            <div class="content-text">
-                <h3>Anti-obnoxious</h3>
-                <div>
-                    <p>You're past gaudy LVMH trinkets; you don't need that validation. You validate yourself on your experience and your success.</p>
-                    <p>These clothes are exclusive, constrainted by limited drops responding to your needs.</p>
-                    <p>We know you don't have time.</p>
-                </div>
-            </div>
+    <!-- ============ CONCEPT ============ -->
+    <section class="section on-stone" id="concept" aria-labelledby="concept-title">
+      <div class="wrap g">
+        <div style="--col:1 / span 6">
+          <span class="eyebrow" data-reveal>Studio</span>
+          <h2 id="concept-title" data-reveal>Concept</h2>
         </div>
+        <div class="prose" style="--col:8 / span 4; align-self:end" data-reveal>
+          <p class="muted">Sketches, textures and references from the studio, where every piece starts.</p>
+        </div>
+
+        <!-- Placeholder-friendly: swap any of these for final artwork at the same aspect ratios. -->
+        <figure style="--col:1 / span 4" data-reveal><div class="frame sketch ar-34"><img src="assets/images/sketch-traveller.jpg" width="1050" height="1400" loading="lazy" alt="Marker sketch of a traveller in a loose jacket and wide trousers, hand in pocket, pulling a suitcase"></div></figure>
+        <figure style="--col:6 / span 7; --mt:clamp(0rem,8vw,8rem)" data-reveal>
+          <div class="frame ar-169"><video src="pan-up-1.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across the design studio mood board"></video></div>
+        </figure>
+
+        <figure style="--col:2 / span 5" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-david.jpg" width="1080" height="1080" loading="lazy" alt="Collage pairing a classical marble statue with a pen-and-ink figure in drawstring trousers"></div></figure>
+        <figure style="--col:8 / span 4; --mt:clamp(0rem,6vw,6rem)" data-reveal><div class="frame sketch ar-34"><img src="assets/images/sketch-suitcase.jpg" width="1050" height="1400" loading="lazy" alt="Sketch of a man in an oversized jacket and loose trousers with a rolling suitcase"></div></figure>
+
+        <figure style="--col:1 / span 7" data-reveal>
+          <div class="frame ar-169"><video src="pan-up-2.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across fabric and sketch references"></video></div>
+        </figure>
+        <figure style="--col:9 / span 4; --mt:clamp(0rem,10vw,10rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-collage-1.jpg" width="1080" height="1080" loading="lazy" alt="Mood board of a sketched figure, tailored trousers and a close crop of woven textile"></div></figure>
+
+        <figure style="--col:1 / span 4" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-collage-2.jpg" width="1080" height="1080" loading="lazy" alt="Figure study in wide-leg trousers beside a classical painting reference"></div></figure>
+        <figure style="--col:5 / span 4; --mt:clamp(0rem,5vw,5rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-figure.jpg" width="1080" height="1080" loading="lazy" alt="Collage of sketched figures and photographic crops from the studio"></div></figure>
+        <figure style="--col:9 / span 4; --mt:clamp(0rem,2vw,2rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-study.jpg" width="1080" height="1080" loading="lazy" alt="Pen study of a figure alongside a pencil detail of a garment"></div></figure>
+
+        <figure style="--col:4 / span 9" data-reveal>
+          <div class="frame ar-169"><video src="pan-up-3.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across more concept work"></video></div>
+        </figure>
+        <figure style="--col:1 / span 3; --row:auto; align-self:end" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-detail.jpg" width="1080" height="1080" loading="lazy" alt="Marker sketch detail of a jacket beside oak grain"></div></figure>
+      </div>
     </section>
 
-    <!-- CONTACT / INTEREST CAPTURE (Point 5) -->
-    <section id="contact">
-        <h2>Stay in the loop</h2>
-        <div class="content-row">
-            <div>
-                <a href="EOIform.html" target="_blank" rel="noopener noreferrer">
-                    <button>
-                        <span>Keep me informed</span>
-                    </button>
-                </a>
-            </div>
-            <div>
-                <div>
-                    <a href="mailto:hello@thirtythousand.com"><i class="fa-solid fa-envelope"></i></a>
-                    <span>hello@thirtythousand.co</span>
-                </div>
-                <div>
-                    <a href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
-                    <span>@thirty_thousand_official</span>
-                </div>
-                <div>
-                    <a href="#section0"><i class="fa-solid fa-caret-up"></i></a>
-                    <span>Home</span>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>Thirty Thousand Limited</p>
-                <p>Designed in Hong Kong</p>
-                <p>Copyright © All Rights Reserved</p>
-            </div>
+    <!-- ============ PRINCIPLES ============ -->
+    <section class="section on-ink" id="principles" aria-labelledby="principles-title">
+      <div class="wrap">
+        <div class="g" style="margin-bottom:clamp(4rem,8vw,8rem)">
+          <div style="--col:1 / span 8">
+            <span class="eyebrow" data-reveal>Principles</span>
+            <h2 id="principles-title" data-reveal>We know you don't have time.</h2>
+          </div>
         </div>
+        <div class="g">
+          <article class="principle" style="--col:1 / span 4" data-reveal>
+            <span class="num">01</span>
+            <h3>Fabrics that you can feel</h3>
+            <p>Our fabric choices are all-natural, chosen for their task. Our designs are as much engineering as they are creative flair.</p>
+            <p>We know the sourcing of all our fabrics, we check the factories and mills for attention to detail and labour conditions — it all reflects in the garments you wear.</p>
+          </article>
+          <article class="principle" style="--col:5 / span 4; --mt:clamp(0rem,5vw,5rem); --d:.12s" data-reveal>
+            <span class="num">02</span>
+            <h3>Design that works with you</h3>
+            <p>When you're taking that call on the move, getting in and out of a car, when you're heading into the board room, you don't have time to think about the cut of your pants or whether your collar is folded properly. We get that, because we've done what you do.</p>
+            <p>Ruthless attention to detail rooted in experiencing the life you lead.</p>
+          </article>
+          <article class="principle" style="--col:9 / span 4; --mt:clamp(0rem,10vw,10rem)" data-reveal>
+            <span class="num">03</span>
+            <h3>Anti-obnoxious</h3>
+            <p>You're past gaudy LVMH trinkets; you don't need that validation. You validate yourself on your experience and your success.</p>
+            <p>These clothes are exclusive, constrained by limited drops responding to your needs.</p>
+            <p>We know you don't have time.</p>
+          </article>
+        </div>
+      </div>
     </section>
+
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="section on-paper" id="instagram" aria-labelledby="ig-title">
+      <div class="wrap">
+        <div class="g" style="margin-bottom:clamp(2.5rem,5vw,4rem)">
+          <div style="--col:1 / span 8">
+            <span class="eyebrow" data-reveal>Instagram</span>
+            <h2 id="ig-title" class="h2-handle" data-reveal>@thirty_thousand_official</h2>
+          </div>
+          <div style="--col:9 / span 4; align-self:end" data-reveal>
+            <p class="muted" style="max-width:22rem">Fittings, fabrics and the work behind each drop.</p>
+            <div class="btn-row" style="margin-top:1.5rem">
+              <a class="btn btn--dark" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder tiles: swap for real posts (or an embed) once the feed is ready. Each links to the profile. -->
+        <div class="ig-grid" data-reveal>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-lanterns.jpg" width="1035" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/sketch-traveller.jpg" width="1050" height="1400" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-walk.jpg" width="1146" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-collar.jpg" width="1200" height="1600" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/sketch-collage-1.jpg" width="1080" height="1080" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-plaza.jpg" width="1136" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="g">
+        <div style="--col:1 / span 7">
+          <span class="eyebrow" data-reveal>Contact</span>
+          <h2 data-reveal>Stay in the loop</h2>
+          <div class="btn-row" data-reveal>
+            <a class="btn btn--light" href="EOIform.html">Keep me informed</a>
+          </div>
+        </div>
+      </div>
+      <div class="g footer-grid">
+        <div style="--col:1 / span 3">
+          <h3>Write</h3>
+          <p><a href="mailto:hello@thirtythousand.co"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>hello@thirtythousand.co</a></p>
+          <p><a href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg>@thirty_thousand_official</a></p>
+        </div>
+        <div style="--col:5 / span 3">
+          <h3>Explore</h3>
+          <ul>
+            <li><a href="#hero-tee">The Hero Tee</a></li>
+            <li><a href="#concept">Concept</a></li>
+            <li><a href="#principles">Principles</a></li>
+            <li><a href="investors.html">Investors</a></li>
+            <li><a href="index-zh.html" hreflang="zh-Hans" lang="zh-Hans">中文</a></li>
+          </ul>
+        </div>
+        <div style="--col:9 / span 4">
+          <h3>Thirty Thousand Limited</h3>
+          <p>Designed in Hong Kong.</p>
+          <p><a href="#top">Back to top ↑</a></p>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 Thirty Thousand Limited. All rights reserved.</span>
+        <span>thirtythousand.co</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts.js" defer></script>
 </body>
 </html>
