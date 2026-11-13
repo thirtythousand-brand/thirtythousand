@@ -3,6 +3,7 @@
    - header turns solid after the first scroll
    - reveal-on-scroll
    - parallax (transform-based: works on iOS, unlike background-attachment: fixed)
+   - pop-up image carousel
    - videos only play while visible
    Everything degrades gracefully: with JS off, or "reduce motion" on, the page is static and fully readable. */
 (function () {
@@ -138,6 +139,92 @@
     window.addEventListener("scroll", headerState, { passive: true });
   }
   headerState();
+
+  /* ---------- Pop-up carousel ----------
+     Any [data-lightbox="group"] button opens the full-size image (data-full) with every other image in that group.
+     Click outside the picture, press Escape or use the close button to leave; arrows, keys and swipes move between images. */
+  var lbTriggers = document.querySelectorAll("[data-lightbox]");
+  if (lbTriggers.length) {
+    var box = document.createElement("div");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-label", "Image viewer");
+    box.innerHTML =
+      '<img class="lightbox__img" alt="" draggable="false">' +
+      '<button class="lightbox__btn lightbox__close" type="button" aria-label="Close">\u2715</button>' +
+      '<button class="lightbox__btn lightbox__prev" type="button" aria-label="Previous image">\u2190</button>' +
+      '<button class="lightbox__btn lightbox__next" type="button" aria-label="Next image">\u2192</button>' +
+      '<span class="lightbox__count" aria-live="polite"></span>';
+    document.body.appendChild(box);
+    var lbImg = box.querySelector(".lightbox__img");
+    var lbCount = box.querySelector(".lightbox__count");
+    var lbClose = box.querySelector(".lightbox__close");
+    var lbItems = [], lbIndex = 0, lbOpener = null;
+
+    function lbPad(n) { return n < 10 ? "0" + n : String(n); }
+    function lbShow(i) {
+      lbIndex = (i + lbItems.length) % lbItems.length;
+      var t = lbItems[lbIndex];
+      var thumb = t.querySelector("img");
+      lbImg.src = t.getAttribute("data-full") || (thumb && thumb.src) || "";
+      lbImg.alt = thumb ? thumb.alt : "";
+      lbCount.textContent = lbPad(lbIndex + 1) + " / " + lbPad(lbItems.length);
+      // warm the cache for the neighbours so paging feels instant
+      [lbIndex + 1, lbIndex - 1].forEach(function (k) {
+        var n = lbItems[(k + lbItems.length) % lbItems.length];
+        if (n && n !== t) (new Image()).src = n.getAttribute("data-full") || "";
+      });
+    }
+    function lbOpen(trigger) {
+      var group = trigger.getAttribute("data-lightbox");
+      lbItems = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox="' + group + '"]'));
+      lbOpener = trigger;
+      box.classList.toggle("lightbox--single", lbItems.length < 2);
+      lbShow(lbItems.indexOf(trigger));
+      box.classList.add("is-open");
+      document.body.classList.add("lightbox-open");
+      lbClose.focus();
+    }
+    function lbShut() {
+      box.classList.remove("is-open");
+      document.body.classList.remove("lightbox-open");
+      if (lbOpener) lbOpener.focus();
+    }
+    lbTriggers.forEach(function (t) {
+      t.addEventListener("click", function () { lbOpen(t); });
+    });
+    // a click anywhere except on the picture or a button leaves the viewer
+    box.addEventListener("click", function (e) {
+      if (e.target.closest(".lightbox__img")) return;
+      var btn = e.target.closest(".lightbox__btn");
+      if (!btn) return lbShut();
+      if (btn === lbClose) lbShut();
+      else lbShow(lbIndex + (btn.classList.contains("lightbox__next") ? 1 : -1));
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!box.classList.contains("is-open")) return;
+      if (e.key === "Escape") lbShut();
+      else if (e.key === "ArrowRight") lbShow(lbIndex + 1);
+      else if (e.key === "ArrowLeft") lbShow(lbIndex - 1);
+      else if (e.key === "Tab") {
+        // keep keyboard focus inside the viewer
+        var f = Array.prototype.filter.call(box.querySelectorAll("button"), function (b) { return b.offsetParent !== null; });
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    var lbX = null;
+    box.addEventListener("pointerdown", function (e) { lbX = e.clientX; });
+    box.addEventListener("pointerup", function (e) {
+      if (lbX === null || lbItems.length < 2) return;
+      var dx = e.clientX - lbX;
+      lbX = null;
+      if (Math.abs(dx) > 50) lbShow(lbIndex + (dx < 0 ? 1 : -1));
+    });
+  }
 
   /* ---------- Videos: play only when on screen ---------- */
   var vids = document.querySelectorAll("video[data-autoplay]");

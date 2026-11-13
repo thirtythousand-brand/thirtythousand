@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Thirty Thousand — Natural-fibre wardrobe essentials | 天然面料基础服饰</title>
   <meta name="description" content="Thirty Thousand designs logo-free wardrobe essentials in all-natural fabrics for professionals who travel often. Designed in Hong Kong. 香港设计的天然面料基础服饰。">
-  <meta name="theme-color" content="#0e0e0d">
+  <meta name="theme-color" content="#f2f2f2">
   <link rel="canonical" href="https://thirtythousand.co/">
 
   <meta property="og:type" content="website">
@@ -27,7 +27,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300..500&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/images/tee-lanterns.jpg" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add("js");</script>
 
@@ -69,7 +68,7 @@
   }
   </script>
 </head>
-<body>
+<body class="hero-light">
   <!-- Icon sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-ig" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Zm5.2-2.6a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></symbol>
@@ -85,8 +84,7 @@
       </a>
       <button class="menu-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
       <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="#hero-tee">The Hero Tee</a>
-        <a href="#concept">Concept</a>
+        <a href="#gallery">Gallery</a>
         <a href="#principles">Principles</a>
         <a href="investors.html">Investors</a>
         <a class="nav-ig" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg><span>Instagram</span></a>
@@ -97,121 +95,89 @@
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero__media" data-parallax-bg="0.3">
-        <video autoplay muted loop playsinline preload="metadata" data-autoplay poster="assets/images/tee-lanterns.jpg" aria-hidden="true">
-          <source src="video_1.MP4" type="video/mp4">
-        </video>
-      </div>
+    <!-- ============ HERO + INTRODUCTION (light grey) ============ -->
+    <section class="hero hero--light" id="top" aria-labelledby="hero-title">
       <div class="wrap">
-        <h1 id="hero-title" data-reveal>Wardrobe essentials for people with no time to spare.</h1>
-        <p class="zh-title" lang="zh-Hans" data-reveal style="--d:.1s">为日程繁忙的人设计的衣橱基础款。</p>
-        <p class="lede" data-reveal style="--d:.2s;margin-top:clamp(1.5rem,3vw,2.5rem)">Thirty Thousand designs natural-fibre basics in Hong Kong for professionals who spend much of their working lives travelling between airports and boardrooms.</p>
-        <p class="zh" lang="zh-Hans" data-reveal style="--d:.2s">Thirty Thousand 在香港设计天然纤维基础服饰，服务于工作中经常往返机场与会议室的专业人士。</p>
-        <div class="btn-row" data-reveal style="--d:.3s">
-          <a class="btn btn--light" href="EOIform.html">Expression of interest · 意向书</a>
+        <div class="g g--center">
+          <div style="--col:1 / span 7">
+            <h1 id="hero-title" data-reveal>Wardrobe essentials for people with no time to spare.</h1>
+            <p class="zh-title" lang="zh-Hans" data-reveal style="--d:.1s">为日程繁忙的人设计的衣橱基础款。</p>
+            <p class="lede" data-reveal style="--d:.2s;margin-top:clamp(1.5rem,3vw,2.5rem)">Thirty Thousand designs natural-fibre basics in Hong Kong for professionals who spend much of their working lives travelling between airports and boardrooms.</p>
+            <p class="zh" lang="zh-Hans" data-reveal style="--d:.2s">Thirty Thousand 在香港设计天然纤维基础服饰，服务于工作中经常往返机场与会议室的专业人士。</p>
+            <div class="btn-row" data-reveal style="--d:.3s">
+              <a class="btn btn--dark" href="EOIform.html">Expression of interest · 意向书</a>
+            </div>
+          </div>
+          <figure style="--col:9 / span 4; --d:.15s" data-reveal>
+            <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-collage-1.jpg"><img src="assets/images/sketch-collage-1.jpg" width="1080" height="1080" alt="Mood board of a sketched figure, tailored trousers and a close crop of woven textile"></button>
+          </figure>
         </div>
-      </div>
-      <a class="scroll-cue" href="#brief">Scroll</a>
-    </section>
-
-    <!-- ============ THE BRIEF (Chinese beside English) ============ -->
-    <section class="section on-paper" id="brief" aria-label="Introduction">
-      <div class="wrap">
-        <span class="eyebrow" data-reveal>Thirty Thousand</span>
-        <div class="pair">
+        <div class="pair hero__brief">
           <p class="statement" data-reveal>Our clothes are made from all-natural fabrics and cut to hold their shape through a full day of travel and meetings.</p>
           <p class="statement is-zh" lang="zh-Hans" data-reveal style="--d:.12s">我们的服装采用纯天然面料制作，剪裁能在旅行和会议交织的一整天里保持版型。</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ THE HERO TEE (Chinese below) ============ -->
-    <section class="section on-paper" id="hero-tee" style="padding-top:0" aria-labelledby="tee-title">
-      <div class="wrap g">
-        <div style="--col:1 / span 5; --row:1; align-self:end">
-          <h2 id="tee-title" data-reveal>The Hero Tee</h2>
-          <p class="zh-title" lang="zh-Hans" data-reveal>主打 T 恤</p>
-          <div class="prose" style="margin-top:2.5rem" data-reveal>
-            <p>The Hero Tee is cut from 220gsm organic cotton with a longer back hem and side vents, so it keeps its shape through heat, humidity and long flights. Each colour is capped at 300 units per run.</p>
-            <p class="zh" lang="zh-Hans">主打 T 恤采用 220gsm 有机棉，后摆加长并设侧开衩，在炎热、潮湿和长途飞行中依然保持版型。每批单色限量不超过 300 件。</p>
-          </div>
-          <div class="btn-row" data-reveal>
-            <a class="btn btn--dark" href="EOIform.html">Preorder · 限量预购</a>
-          </div>
-        </div>
-
-        <figure style="--col:7 / span 6; --row:1" data-reveal>
-          <div class="frame ar-34" data-parallax-img>
-            <img src="assets/images/tee-street.jpg" width="1241" height="1800" loading="lazy" alt="Black-and-white photograph of a man in sunglasses wearing the white Thirty Thousand Hero Tee on a city street">
-          </div>
-        </figure>
-
-        <figure style="--col:1 / span 4; --row:2" data-reveal>
-          <div class="frame ar-34" data-parallax-img>
-            <img src="assets/images/tee-collar.jpg" width="1200" height="1600" loading="lazy" alt="Close-up of the crew neck and shoulder of the Hero Tee in white cotton">
-          </div>
-        </figure>
-        <figure style="--col:5 / span 4; --row:2; --mt:clamp(0rem,9vw,9rem)" data-parallax="0.05" data-reveal>
-          <div class="frame ar-11" data-parallax-img>
-            <img src="assets/images/tee-back.jpg" width="1800" height="1652" loading="lazy" alt="The Hero Tee seen from behind, showing the shoulder and drape of the fabric">
-          </div>
-        </figure>
-        <figure style="--col:9 / span 4; --row:2; --mt:clamp(0rem,3vw,3rem)" data-reveal>
-          <div class="frame ar-34" data-parallax-img>
-            <img src="assets/images/tee-profile.jpg" width="1334" height="1800" loading="lazy" alt="Side profile of a man in the Hero Tee, hand raised to his face">
-          </div>
-        </figure>
-      </div>
-    </section>
-
-    <!-- ============ QUOTE BAND ============ -->
-    <section class="band" aria-label="Brand statement">
-      <div class="band__media" data-parallax-bg="0.28">
-        <img src="assets/images/tee-lanterns-wide.jpg" width="1390" height="1800" loading="lazy" alt="Man in a white tee standing in front of red paper lanterns, black and white">
-      </div>
+    <!-- ============ GALLERY — four rows, no text: sketches, the tee, jackets and streets, films ============ -->
+    <section class="section on-paper gallery" id="gallery" aria-label="Gallery">
       <div class="wrap">
-        <p class="quote" data-reveal>Every piece has clean lines and natural fabric, and none of them carries a logo.</p>
-        <p class="zh-title" lang="zh-Hans" data-reveal style="--d:.12s">每一件衣服都线条干净、面料天然，且不带任何 Logo。</p>
+        <div class="strip strip--sketch" role="group" aria-label="Sketches" data-reveal>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-traveller.jpg"><img src="assets/images/thumbs/sketch-traveller.jpg" width="480" height="480" loading="lazy" alt="Marker sketch of a traveller in a loose jacket and wide trousers, hand in pocket, pulling a suitcase"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-suitcase.jpg"><img src="assets/images/thumbs/sketch-suitcase.jpg" width="480" height="480" loading="lazy" alt="Sketch of a man in an oversized jacket and loose trousers with a rolling suitcase"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-david.jpg"><img src="assets/images/thumbs/sketch-david.jpg" width="480" height="480" loading="lazy" alt="Collage pairing a classical marble statue with a pen-and-ink figure in drawstring trousers"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-figure.jpg"><img src="assets/images/thumbs/sketch-figure.jpg" width="480" height="480" loading="lazy" alt="Collage of sketched figures and photographic crops from the studio"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-collage-2.jpg"><img src="assets/images/thumbs/sketch-collage-2.jpg" width="480" height="480" loading="lazy" alt="Figure study in wide-leg trousers beside a classical painting reference"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-study.jpg"><img src="assets/images/thumbs/sketch-study.jpg" width="480" height="480" loading="lazy" alt="Pen study of a figure alongside a pencil detail of a garment"></button>
+          <button class="tile" type="button" data-lightbox="sketches" data-full="assets/images/sketch-detail.jpg"><img src="assets/images/thumbs/sketch-detail.jpg" width="480" height="480" loading="lazy" alt="Marker sketch detail of a jacket beside oak grain"></button>
+        </div>
+        <div class="strip" role="group" aria-label="The tee" data-reveal>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/tee-walking.jpg"><img src="assets/images/thumbs/tee-walking.jpg" width="480" height="480" loading="lazy" alt="Man in sunglasses walking along a concrete wall in the white Thirty Thousand Hero Tee and black trousers"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/tee-closeup.jpg"><img src="assets/images/thumbs/tee-closeup.jpg" width="480" height="480" loading="lazy" alt="Close-up of the crew neck and shoulder of the Hero Tee in white cotton"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/tee-back-sun.jpg"><img src="assets/images/thumbs/tee-back-sun.jpg" width="480" height="480" loading="lazy" alt="The Hero Tee seen from behind, showing the shoulder and drape of the fabric"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/tee-pose.jpg"><img src="assets/images/thumbs/tee-pose.jpg" width="480" height="480" loading="lazy" alt="Seated man in the Hero Tee with one hand raised to his head"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-01.jpg"><img src="assets/images/thumbs/fabric-01.jpg" width="480" height="480" loading="lazy" alt="Man seen from behind in a wet white tee, with both hands on the walls of a stone shower"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-02.jpg"><img src="assets/images/thumbs/fabric-02.jpg" width="480" height="480" loading="lazy" alt="Man in a wet white tee leaning against a stone shower wall with his head bowed"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-03.jpg"><img src="assets/images/thumbs/fabric-03.jpg" width="480" height="480" loading="lazy" alt="Close-up of a man's face and shoulder in a wet white tee under falling water"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-04.jpg"><img src="assets/images/thumbs/fabric-04.jpg" width="480" height="480" loading="lazy" alt="Side view of a wet white tee clinging to a man's shoulder and back in warm light"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-05.jpg"><img src="assets/images/thumbs/fabric-05.jpg" width="480" height="480" loading="lazy" alt="Man in a wet white tee resting his head on his arm against a shower wall"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-06.jpg"><img src="assets/images/thumbs/fabric-06.jpg" width="480" height="480" loading="lazy" alt="The back of a wet white tee and the nape of the neck in warm light"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-07.jpg"><img src="assets/images/thumbs/fabric-07.jpg" width="480" height="480" loading="lazy" alt="Man from behind in a wet white tee, standing still under falling water"></button>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/fabric-08.jpg"><img src="assets/images/thumbs/fabric-08.jpg" width="480" height="480" loading="lazy" alt="Bare feet and dark wet trousers in a stone shower"></button>
+        </div>
+        <div class="strip" role="group" aria-label="Jackets and streets" data-reveal>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-01.jpg"><img src="assets/images/thumbs/city-01.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers standing in a misty, rain-wet alley with neon signs behind him"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-02.jpg"><img src="assets/images/thumbs/city-02.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers standing in a wet Hong Kong street"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-03.jpg"><img src="assets/images/thumbs/city-03.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers standing in a rainy street in Itaewon, Seoul"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-05.jpg"><img src="assets/images/thumbs/city-05.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers talking with another man in a wet Bangkok alley"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-06.jpg"><img src="assets/images/thumbs/city-06.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers carrying a canvas tote on a Ginza street in autumn light"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-07.jpg"><img src="assets/images/thumbs/city-07.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers carrying a leather bag along a rainy street in Central, Hong Kong"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-08.jpg"><img src="assets/images/thumbs/city-08.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers walking through a blurred crowd of commuters in Central, Hong Kong"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-09.jpg"><img src="assets/images/thumbs/city-09.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers standing still while commuters rush past in Central, Hong Kong"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-10.jpg"><img src="assets/images/thumbs/city-10.jpg" width="480" height="480" loading="lazy" alt="Close view of a man in a black jacket and white tee striding through a busy crowd"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-11.jpg"><img src="assets/images/thumbs/city-11.jpg" width="480" height="480" loading="lazy" alt="Man in a black jacket and wide trousers carrying a briefcase through a financial district crowd"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/city-04.jpg"><img src="assets/images/thumbs/city-04.jpg" width="480" height="480" loading="lazy" alt="Man in sunglasses in profile, wearing a textured black jacket with one hand in his trouser pocket"></button>
+          <button class="tile" type="button" data-lightbox="street" data-full="assets/images/ig-cuff.jpg"><img src="assets/images/thumbs/ig-cuff.jpg" width="480" height="480" loading="lazy" alt="Man in sunglasses and a black jacket over a white tee, adjusting his cuff"></button>
+        </div>
+        <div class="strip strip--video" role="group" aria-label="Films" data-reveal>
+          <figure class="vtile"><div class="frame ar-169"><video src="video_1.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Film of a model in a white suit walking through a busy city station, in black and white"></video></div></figure>
+          <figure class="vtile"><div class="frame ar-169"><video src="pan-up-1.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across a black jacket and trousers, in black and white"></video></div></figure>
+          <figure class="vtile"><div class="frame ar-169"><video src="pan-up-2.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across a textured linen jacket, in black and white"></video></div></figure>
+          <figure class="vtile"><div class="frame ar-169"><video src="pan-up-3.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across a dark jacket and trousers, in black and white"></video></div></figure>
+        </div>
       </div>
     </section>
 
-    <!-- ============ CONCEPT (Chinese beside English) ============ -->
-    <section class="section on-stone" id="concept" aria-labelledby="concept-title">
-      <div class="wrap g">
-        <div style="--col:1 / span 6">
-          <span class="eyebrow" data-reveal>Studio · 工作室</span>
-          <h2 id="concept-title" data-reveal>Concept</h2>
-          <p class="zh-title" lang="zh-Hans" data-reveal>品牌概念</p>
+    <!-- ============ QUOTE ============ -->
+    <section class="section on-stone" aria-label="Brand statement">
+      <div class="wrap g g--center">
+        <div style="--col:1 / span 7">
+          <p class="quote" data-reveal>Every piece has clean lines and natural fabric, and none of them carries a logo.</p>
+          <p class="zh-title" lang="zh-Hans" data-reveal style="--d:.12s">每一件衣服都线条干净、面料天然，且不带任何 Logo。</p>
         </div>
-        <div class="prose" style="--col:8 / span 4; align-self:end" data-reveal>
-          <p class="muted">Every garment starts as marker sketches and fabric swatches gathered during the design process.</p>
-          <p class="zh" lang="zh-Hans">每一件服装都始于设计过程中收集的马克笔草图和面料小样。</p>
-        </div>
-
-        <!-- Placeholder-friendly: swap any of these for final artwork at the same aspect ratios. -->
-        <figure style="--col:1 / span 4" data-reveal><div class="frame sketch ar-34"><img src="assets/images/sketch-traveller.jpg" width="1050" height="1400" loading="lazy" alt="Marker sketch of a traveller in a loose jacket and wide trousers, hand in pocket, pulling a suitcase"></div></figure>
-        <figure style="--col:6 / span 7; --mt:clamp(0rem,8vw,8rem)" data-reveal>
-          <div class="frame ar-169"><video src="pan-up-1.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across the design studio mood board"></video></div>
+        <figure style="--col:9 / span 4; --d:.15s" data-reveal>
+          <button class="tile" type="button" data-lightbox="tee" data-full="assets/images/tee-lanterns-bw.jpg"><img src="assets/images/tee-lanterns-bw.jpg" width="1536" height="1024" loading="lazy" alt="Black-and-white photograph of a man in a white tee standing among paper lanterns"></button>
         </figure>
-
-        <figure style="--col:2 / span 5" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-david.jpg" width="1080" height="1080" loading="lazy" alt="Collage pairing a classical marble statue with a pen-and-ink figure in drawstring trousers"></div></figure>
-        <figure style="--col:8 / span 4; --mt:clamp(0rem,6vw,6rem)" data-reveal><div class="frame sketch ar-34"><img src="assets/images/sketch-suitcase.jpg" width="1050" height="1400" loading="lazy" alt="Sketch of a man in an oversized jacket and loose trousers with a rolling suitcase"></div></figure>
-
-        <figure style="--col:1 / span 7" data-reveal>
-          <div class="frame ar-169"><video src="pan-up-2.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across fabric and sketch references"></video></div>
-        </figure>
-        <figure style="--col:9 / span 4; --mt:clamp(0rem,10vw,10rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-collage-1.jpg" width="1080" height="1080" loading="lazy" alt="Mood board of a sketched figure, tailored trousers and a close crop of woven textile"></div></figure>
-
-        <figure style="--col:1 / span 4" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-collage-2.jpg" width="1080" height="1080" loading="lazy" alt="Figure study in wide-leg trousers beside a classical painting reference"></div></figure>
-        <figure style="--col:5 / span 4; --mt:clamp(0rem,5vw,5rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-figure.jpg" width="1080" height="1080" loading="lazy" alt="Collage of sketched figures and photographic crops from the studio"></div></figure>
-        <figure style="--col:9 / span 4; --mt:clamp(0rem,2vw,2rem)" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-study.jpg" width="1080" height="1080" loading="lazy" alt="Pen study of a figure alongside a pencil detail of a garment"></div></figure>
-
-        <figure style="--col:4 / span 9" data-reveal>
-          <div class="frame ar-169"><video src="pan-up-3.MP4" muted loop playsinline preload="metadata" data-autoplay aria-label="Slow upward pan across more concept work"></video></div>
-        </figure>
-        <figure style="--col:1 / span 3; --row:auto; align-self:end" data-reveal><div class="frame sketch ar-11"><img src="assets/images/sketch-detail.jpg" width="1080" height="1080" loading="lazy" alt="Marker sketch detail of a jacket beside oak grain"></div></figure>
       </div>
     </section>
 
@@ -232,13 +198,13 @@
             <p>Every fabric is natural and chosen for the job the garment has to do. We know where each one comes from and we check the mills and factories for workmanship and labour conditions.</p>
             <p class="zh" lang="zh-Hans">每种面料都是天然材质，并根据服装的用途挑选。我们清楚每种面料的来源，并实地检查纱厂和工厂的工艺与用工状况。</p>
           </article>
-          <article class="principle" style="--col:5 / span 4; --mt:clamp(0rem,5vw,5rem); --d:.12s" data-reveal>
+          <article class="principle" style="--col:5 / span 4; --d:.12s" data-reveal>
             <span class="num">02</span>
             <h3>Design for your day <span class="h-zh" lang="zh-Hans">为你的一天而设计</span></h3>
             <p>Our designs allow for taking calls on the move, getting in and out of cars and walking into a boardroom without adjusting a collar. We have lived that routine ourselves, so we check every detail against it.</p>
             <p class="zh" lang="zh-Hans">我们的设计考虑到边走边接电话、频繁上下车，以及走进董事会议室时无需整理领口。我们自己也过着这样的生活，所以每个细节都会对照这种日常来检查。</p>
           </article>
-          <article class="principle" style="--col:9 / span 4; --mt:clamp(0rem,10vw,10rem)" data-reveal>
+          <article class="principle" style="--col:9 / span 4; --d:.24s" data-reveal>
             <span class="num">03</span>
             <h3>Limited drops <span class="h-zh" lang="zh-Hans">限量发售</span></h3>
             <p>Each drop is limited and made in response to what our customers ask for. The clothes carry no logos, which leaves the wearer's own record to speak for them.</p>
@@ -266,12 +232,12 @@
         </div>
         <!-- Placeholder tiles: swap for real posts (or an embed) once the feed is ready. Each links to the profile. -->
         <div class="ig-grid" data-reveal>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-lanterns.jpg" width="1035" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/sketch-traveller.jpg" width="1050" height="1400" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-walk.jpg" width="1146" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-collar.jpg" width="1200" height="1600" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/sketch-collage-1.jpg" width="1080" height="1080" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
-          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-plaza.jpg" width="1136" height="1800" loading="lazy" alt=""><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/ig-wall.jpg" width="1025" height="1535" loading="lazy" alt="" style="object-position:50% 18%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/tee-column.jpg" width="1024" height="1536" loading="lazy" alt="" style="object-position:50% 25%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/ig-cuff.jpg" width="1024" height="1536" loading="lazy" alt="" style="object-position:50% 30%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/ig-aloof.jpg" width="1101" height="1428" loading="lazy" alt="" style="object-position:50% 18%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/city-02.jpg" width="832" height="1248" loading="lazy" alt="" style="object-position:50% 20%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
+          <a class="ig-tile" href="https://www.instagram.com/thirty_thousand_official/" target="_blank" rel="noopener noreferrer" aria-label="Thirty Thousand on Instagram"><img src="assets/images/ig-stone.jpg" width="1101" height="1428" loading="lazy" alt="" style="object-position:50% 20%"><svg aria-hidden="true"><use href="#i-ig"/></svg></a>
         </div>
       </div>
     </section>
@@ -302,8 +268,7 @@
         <div style="--col:5 / span 3">
           <h3>Explore · 浏览</h3>
           <ul>
-            <li><a href="#hero-tee">The Hero Tee</a></li>
-            <li><a href="#concept">Concept</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#principles">Principles</a></li>
             <li><a href="investors.html">Investors</a></li>
           </ul>
